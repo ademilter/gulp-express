@@ -1,0 +1,31 @@
+{
+  "name": "gulp-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "Adem ilter",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "express": "^4.15.4",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-html-prettify": "0.0.1",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-if": "^2.0.2",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-pug": "^3.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sequence": "^0.4.6",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-uglify": "^3.0.0"
+  },
+  "dependencies": {
+    "pug": "^2.0.0-rc.4"
+  }
+}
