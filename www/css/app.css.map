@@ -1,1 +1,1 @@
-{"version":3,"sources":["app.scss"],"names":[],"mappings":"AAAA;EACE,uBAAsB,EACvB","file":"app.css","sourcesContent":["body {\n  background-color: #fde;\n}"]}
+{"version":3,"sources":["app.scss"],"names":[],"mappings":"AAAA;EACE,sBAAqB;EACrB,aAAY,EACb","file":"app.css","sourcesContent":["body {\n  background-color: red;\n  color: black;\n}"]}

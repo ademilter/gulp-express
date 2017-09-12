@@ -27,7 +27,7 @@ let config = {
     'root': './www',
     'static': './www/static/',
     'views': './www/html/',
-    'styles': './www/styles/',
+    'styles': './www/css/',
     'assets': './www/assets/'
   }
 }
@@ -93,6 +93,10 @@ gulp.task('browser-sync', ['nodemon'], function () {
     proxy: 'http://localhost:1234',
     port: 2345
   })
+  gulp.watch(config.src.views + '**/*.pug', ['html'])
+  gulp.watch(config.src.styles + '**/*.scss', ['css'])
+  gulp.watch(config.src.static + '**/*', ['static'])
+  gulp.watch(config.src.assets + '**/*', ['assets'])
 })
 
 gulp.task('nodemon', function (cb) {
@@ -105,24 +109,14 @@ gulp.task('nodemon', function (cb) {
       cb()
     }
     started = true
-  }).on('restart', function onRestart () {
-    setTimeout(function reload () {
-      browserSync.reload({
-        stream: false
-      })
-    }, 500)
   })
 })
 
 // DO IT ///////////////////////////////////
 
-gulp.task('default', ['browser-sync'], () => {
-  gulp.watch(config.src.views + '**/*.pug', ['html'])
-  gulp.watch(config.src.styles + '**/*.scss', ['css'])
-  gulp.watch(config.src.static + '**/*', ['static'])
-})
+gulp.task('default', ['browser-sync', 'html', 'css', 'static', 'assets'])
 
 gulp.task('prod', function (cb) {
   config.production = true
-  sequence('html', 'css', 'static', cb)
+  sequence('html', 'css', 'static', 'assets', cb)
 })
